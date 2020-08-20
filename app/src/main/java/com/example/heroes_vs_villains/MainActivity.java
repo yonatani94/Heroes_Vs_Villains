@@ -8,6 +8,7 @@ import android.view.autofill.AutofillValue;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
+import android.widget.Toast;
 
 //
 public class MainActivity extends AppCompatActivity {
@@ -38,10 +39,21 @@ public class MainActivity extends AppCompatActivity {
         disableButtonVillains();
 
 
+        declareWinner();
+
 
 
 
  }
+
+    private void declareWinner() {
+        if(main_SKB_Villains.getProgress()==0)
+        {
+            Toast.makeText(getActivity(),"Hero is winner",Toast.LENGTH_SHORT).show();
+        }
+        else if(main_SKB_Hero.getProgress()==0)
+            Toast.makeText(getActivity(),"Villains is winner",Toast.LENGTH_SHORT).show();
+    }
 
     private void disableButtonVillains() {
         main_BTN_AttackVillains1.setEnabled(false);
