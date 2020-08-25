@@ -1,3 +1,3 @@
 <resources>
-    <string name="app_name">Heroes_Vs_Villains</string>
+    <string name="app_name" translatable="false">Heroes_Vs_Villains</string>
 </resources>
