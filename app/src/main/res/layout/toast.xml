@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    android:background="#DAAA" >
+    android:background="#DD000000" >
 
     <ImageView
         android:id="@+id/toast_IMG_picture"
@@ -17,8 +17,9 @@
 
     <TextView
         android:id="@+id/toast_TXT_text"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="141dp"
+        android:layout_marginRight="80sp"
         android:textColor="#F10303" />
 
 </LinearLayout>
