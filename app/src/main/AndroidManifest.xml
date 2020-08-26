@@ -15,6 +15,7 @@
         <activity android:name=".MainActivity"
             android:screenOrientation="sensorLandscape"
                 android:configChanges="orientation|keyboardHidden|screenSize"
+
             >
 
                 <intent-filter>
