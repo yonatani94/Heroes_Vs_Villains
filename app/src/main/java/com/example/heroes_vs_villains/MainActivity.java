@@ -11,10 +11,14 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -49,25 +53,12 @@ public class MainActivity extends AppCompatActivity {
 
  }
 
+
  private View.OnClickListener attackClick = new View.OnClickListener() {
      @Override
      public void onClick(View view) {
-         if(main_PGB_Hero.getProgress()==0 || main_PGB_Villains.getProgress() ==0)
-         {
-             if(view.getTag().toString().equals("human"))
-             {
-                 Toast.makeText(getApplicationContext(),
-                         "Suske Is Winner!!!",
-                         Toast.LENGTH_LONG).show();
-             }
-             else {
-                 Toast.makeText(getApplicationContext(),
-                         "Naruto Is Winner!!!",
-                         Toast.LENGTH_LONG).show();
-             }
-             gameOver = true;
-         }
 
+         gameOver = Winner(main_PGB_Hero,main_PGB_Villains);
          if(gameOver==false)
          {
              /*  -----------------player 1 turn ----------------------*/
@@ -92,14 +83,19 @@ public class MainActivity extends AppCompatActivity {
         if(view.getTag().toString().equals("attackH1"))
         {
             updateProgressBar(main_PGB_Villains,10);
+            Toast.makeText(getApplicationContext(), "Suske damge 10 HP", Toast.LENGTH_SHORT).show();
         }
         else if(view.getTag().toString().equals("attackH2"))
         {
             updateProgressBar(main_PGB_Villains,20);
+            Toast.makeText(getApplicationContext(), "Suske damge 20 HP", Toast.LENGTH_SHORT).show();
+
         }
         else if(view.getTag().toString().equals("attackH3"))
         {
             updateProgressBar(main_PGB_Villains,30);
+            Toast.makeText(getApplicationContext(), "Suske damge 30 HP", Toast.LENGTH_SHORT).show();
+
         }
         playerTurn++;
         switchButton(main_PGB_Hero);
@@ -111,14 +107,20 @@ public class MainActivity extends AppCompatActivity {
          if(view.getTag().toString().equals("attackV1"))
         {
             updateProgressBar(main_PGB_Hero,10);
+            Toast.makeText(getApplicationContext(), "Naruto damge 10 HP", Toast.LENGTH_SHORT).show();
+
         }
         else if(view.getTag().toString().equals("attackV2"))
         {
             updateProgressBar(main_PGB_Hero,20);
+            Toast.makeText(getApplicationContext(), "Naruto damge 20 HP", Toast.LENGTH_SHORT).show();
+
         }
         else if(view.getTag().toString().equals("attackV3"))
         {
             updateProgressBar(main_PGB_Hero,30);
+            Toast.makeText(getApplicationContext(), "Naruto damge 30 HP", Toast.LENGTH_SHORT).show();
+
         }
         playerTurn--;
         switchButton(main_PGB_Villains);
@@ -243,6 +245,37 @@ public class MainActivity extends AppCompatActivity {
         main_IMG_background=findViewById(R.id.main_IMG_background);
     }
 
+    private  void customToast(String str)
+    {
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.toast,
+                (ViewGroup) findViewById(R.id.toast_layout_root));
+
+        ImageView image = (ImageView) layout.findViewById(R.id.toast_IMG_picture);
+        image.setImageResource(R.drawable.over);
+        TextView text = (TextView) layout.findViewById(R.id.toast_TXT_text);
+        text.setText(str);
+        text.setTextSize(22);
+        Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(layout);
+        toast.show();
+    }
+
+    private boolean Winner(ProgressBar pgbHero,ProgressBar pgbDevil)
+    {
+        if(pgbHero.getProgress()==0) {
+            customToast("Suske Is Winner!!!");
+            return true;
+        }
+        else if( pgbDevil.getProgress() ==0){
+            customToast("Naruto Is Winner!!!");
+            return true;
+        }
+        return  false;
+
+    }
 
 
 }
