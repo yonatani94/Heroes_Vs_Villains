@@ -37,6 +37,29 @@
             />
 
 
+
+    <TextView
+        android:id="@+id/main_TXT_random"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Random num"
+        android:textSize="20sp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="70sp"
+        ></TextView>
+    <TextView
+        android:id="@+id/main_TXT_turn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/main_TXT_random"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20sp"
+        android:textSize="20sp"
+        android:hint="First player"
+        ></TextView>
+
     <Button
         android:id="@+id/main_BTN_AttackHero1"
         android:layout_width="wrap_content"

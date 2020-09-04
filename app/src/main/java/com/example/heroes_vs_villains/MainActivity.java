@@ -3,13 +3,9 @@ package com.example.heroes_vs_villains;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import android.content.ComponentName;
-import android.content.Intent;
-import android.content.ServiceConnection;
 import android.graphics.PorterDuff;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.IBinder;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -22,6 +18,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+
+import java.util.Random;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -36,8 +34,14 @@ public class MainActivity extends AppCompatActivity {
     private ImageView main_IMG_background;
     private ProgressBar main_PGB_Hero;
     private ProgressBar main_PGB_Villains;
+    private TextView main_TXT_random;
+    private  TextView main_TXT_turn;
+
+    private MediaPlayer mPlayer;
+
     private int playerTurn=0;
     private boolean gameOver = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,14 +49,53 @@ public class MainActivity extends AppCompatActivity {
 
         findView();
 
+        backgroundMusic();
         addPIcWithGlide();
-
-        disableButton(main_PGB_Villains); // player 1 play first
-
+        startPlayer();
         startFight();
 
  }
 
+    private void backgroundMusic() {
+        mPlayer = MediaPlayer.create(this, R.raw.sound);
+        mPlayer.setLooping(true); // Set looping
+        mPlayer.setVolume(100,100);
+    }
+
+
+    private void startPlayer()
+{
+Toast.makeText(getApplicationContext(),"Random a Number\n Even num Naruto first \nelse Suske first ",Toast.LENGTH_LONG).show();
+disableButton(main_PGB_Villains);
+    disableButton(main_PGB_Hero);
+    main_TXT_random.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+           int random  = randomPlayer();
+           main_TXT_random.setEnabled(false);
+        if(random%2==0)
+            {
+                switchButton(main_PGB_Villains);
+                main_TXT_turn.setText("num = " + random + " -> Naruto Play First");
+            }
+            else
+            {
+                switchButton(main_PGB_Hero);
+                main_TXT_turn.setText("num = " + random + " -> Suske Play First");
+            }
+        }
+    });
+
+
+}
+
+
+ private int randomPlayer()
+ {
+     int num;
+     num = new Random().nextInt((6 - 1) + 1) + 1;
+     return num;
+ }
 
  private View.OnClickListener attackClick = new View.OnClickListener() {
      @Override
@@ -128,18 +171,26 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onStart() {
-        Log.d("johny", "onStart");
-        super.onStart();
-
-    }
 
     @Override
-    protected void onStop() {
-        Log.d("johny", "onStop");
-        super.onStop();
+    protected void onPause() {
+        Log.d("johny", "onPause: ");
+        if(mPlayer.isPlaying())
+        {
+            mPlayer.pause();
+        }
+       // isStop=true;
+        super.onPause();
     }
+
+        @Override
+        protected void onResume() {
+            Log.d("johny", "onResume: ");
+           mPlayer.start();
+            super.onResume();
+        }
+
+
     private void switchButton(ProgressBar pgb)
     {
         if(pgb.getTag().toString().equals("human"))
@@ -243,6 +294,8 @@ public class MainActivity extends AppCompatActivity {
         main_PGB_Hero=findViewById(R.id.main_PGB_Hero);
         main_PGB_Villains= findViewById(R.id.main_PGB_Villains);
         main_IMG_background=findViewById(R.id.main_IMG_background);
+        main_TXT_random=findViewById(R.id.main_TXT_random);
+       main_TXT_turn=findViewById(R.id.main_TXT_turn);;
     }
 
     private  void customToast(String str)
