@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+ <TableLayout
+     android:id="@+id/listFragment_LAY_table"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
+
+  <TableRow
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      >
+   <TextView
+       android:id="@+id/listFragment_LBL_place"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:gravity="center"
+       android:text="Place"
+       android:textStyle="bold" />
+   <TextView
+       android:id="@+id/listFragment_LBL_name"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:gravity="center"
+       android:text="name"
+       android:textStyle="bold" />
+
+
+   <TextView
+       android:id="@+id/listFragment_LBL_moves"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:gravity="center"
+       android:text="Moves"
+       android:textStyle="bold" />
+<TextView
+     android:id="@+id/listFragment_LBL_time"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:text="Time"
+    android:textStyle="bold"
+    ></TextView>
+
+  </TableRow>
+
+  <TableRow
+      android:layout_height="0dp"
+      android:layout_weight="1">
+
+
+   <TextView
+       android:id="@+id/listFragment_LBL_row1place"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:gravity="center"
+       android:tag="1"
+       android:text="1"
+       android:textStyle="bold" />
+   <TextView
+       android:id="@+id/listFragment_LBL_row1name"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:tag="1"
+       android:text="---"
+       android:gravity="center" />
+
+   <TextView
+       android:id="@+id/listFragment_LBL_row1moves"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:tag="1"
+       android:text="---"
+       android:gravity="center" />
+   <TextView
+       android:id="@+id/listFragment_LBL_row1time"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:tag="1"
+       android:text="---"
+       android:gravity="center" />
+
+  </TableRow>
+
+  <TableRow android:layout_height="0dp"
+      android:layout_weight="1">
+   <TextView
+       android:id="@+id/listFragment_LBL_row2place"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:gravity="center"
+       android:text="2"
+       android:tag="2"
+       android:textStyle="bold" />
+   <TextView
+       android:id="@+id/listFragment_LBL_row2name"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:text="---"
+       android:tag="2"
+       android:gravity="center" />
+
+   <TextView
+       android:id="@+id/listFragment_LBL_row2moves"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:text="---"
+       android:gravity="center" />
+   <TextView
+       android:id="@+id/listFragment_LBL_row2time"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:text="---"
+       android:tag="2"
+       android:gravity="center" />
+  </TableRow>
+
+  <TableRow android:layout_height="0dp"
+      android:layout_weight="1">
+   <TextView
+       android:id="@+id/listFragment_LBL_row3place"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:gravity="center"
+       android:text="3"
+       android:tag="3"
+       android:textStyle="bold" />
+   <TextView
+       android:id="@+id/listFragment_LBL_row3name"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:tag="3"
+       android:text="---"
+       android:gravity="center" />
+
+   <TextView
+       android:id="@+id/listFragment_LBL_row3moves"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:text="---"
+       android:tag="3"
+       android:gravity="center" />
+   <TextView
+       android:id="@+id/listFragment_LBL_row3time"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:text="---"
+       android:tag="3"
+       android:gravity="center" />
+  </TableRow>
+
+  <TableRow android:layout_height="0dp"
+      android:layout_weight="1">
+   <TextView
+       android:id="@+id/listFragment_LBL_row4place"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:gravity="center"
+       android:text="4"
+       android:tag="4"
+       android:textStyle="bold" />
+   <TextView
+       android:id="@+id/listFragment_LBL_row4name"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:text="---"
+       android:tag="4"
+       android:gravity="center" />
+
+   <TextView
+       android:id="@+id/listFragment_LBL_row4moves"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:text="---"
+       android:tag="4"
+       android:gravity="center" />
+   <TextView
+       android:id="@+id/listFragment_LBL_row4time"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:text="---"
+       android:tag="4"
+       android:gravity="center" />
+  </TableRow>
+
+  <TableRow android:layout_height="0dp"
+      android:layout_weight="1">
+   <TextView
+       android:id="@+id/listFragment_LBL_row5place"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:gravity="center"
+       android:text="5"
+       android:tag="5"
+       android:textStyle="bold" />
+   <TextView
+       android:id="@+id/listFragment_LBL_row5name"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:tag="5"
+       android:text="---"
+       android:gravity="center" />
+
+   <TextView
+       android:id="@+id/listFragment_LBL_row5moves"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:text="---"
+       android:tag="5"
+       android:gravity="center" />
+   <TextView
+       android:id="@+id/listFragment_LBL_row5time"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:text="---"
+       android:tag="5"
+       android:gravity="center" />
+
+  </TableRow>
+
+  <TableRow android:layout_height="0dp"
+      android:layout_weight="1">
+   <TextView
+       android:id="@+id/listFragment_LBL_row6place"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:gravity="center"
+       android:text="6"
+       android:tag="6"
+       android:textStyle="bold" />
+   <TextView
+       android:id="@+id/listFragment_LBL_row6name"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:text="---"
+       android:tag="6"
+       android:gravity="center" />
+
+   <TextView
+       android:id="@+id/listFragment_LBL_row6moves"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:text="---"
+       android:tag="6"
+       android:gravity="center" />
+   <TextView
+       android:id="@+id/listFragment_LBL_row6time"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:text="---"
+       android:tag="6"
+       android:gravity="center" />
+  </TableRow>
+
+  <TableRow android:layout_height="0dp"
+      android:layout_weight="1">
+   <TextView
+       android:id="@+id/listFragment_LBL_row7place"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:gravity="center"
+       android:text="7"
+       android:tag="7"
+       android:textStyle="bold" />
+   <TextView
+       android:id="@+id/listFragment_LBL_row7name"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:text="---"
+       android:tag="7"
+       android:gravity="center" />
+
+   <TextView
+       android:id="@+id/listFragment_LBL_row7moves"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:text="---"
+       android:tag="7"
+       android:gravity="center" />
+   <TextView
+       android:id="@+id/listFragment_LBL_row7time"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:text="---"
+       android:tag="7"
+       android:gravity="center" />
+  </TableRow>
+
+  <TableRow android:layout_height="0dp"
+      android:layout_weight="1">
+   <TextView
+       android:id="@+id/listFragment_LBL_row8place"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:gravity="center"
+       android:text="8"
+       android:tag="8"
+       android:textStyle="bold" />
+   <TextView
+       android:id="@+id/listFragment_LBL_row8name"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:text="---"
+
+       android:tag="8"
+       android:gravity="center" />
+
+   <TextView
+       android:id="@+id/listFragment_LBL_row8moves"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:text="---"
+       android:tag="8"
+       android:gravity="center" />
+   <TextView
+       android:id="@+id/listFragment_LBL_row8time"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:text="---"
+       android:tag="8"
+       android:gravity="center" />
+  </TableRow>
+
+  <TableRow android:layout_height="0dp"
+      android:layout_weight="1">
+   <TextView
+       android:id="@+id/listFragment_LBL_row9place"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:gravity="center"
+       android:text="9"
+       android:tag="9"
+       android:textStyle="bold" />
+   <TextView
+       android:id="@+id/listFragment_LBL_row9name"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:text="---"
+       android:tag="9"
+       android:gravity="center" />
+
+   <TextView
+       android:id="@+id/listFragment_LBL_row9moves"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:text="---"
+       android:tag="9"
+       android:gravity="center" />
+   <TextView
+       android:id="@+id/listFragment_LBL_row9time"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:text="---"
+       android:tag="9"
+       android:gravity="center" />
+  </TableRow>
+
+  <TableRow android:layout_height="0dp"
+      android:layout_weight="1">
+   <TextView
+       android:id="@+id/listFragment_LBL_row10place"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:gravity="center"
+       android:text="10"
+       android:tag="10"
+       android:textStyle="bold" />
+   <TextView
+       android:id="@+id/listFragment_LBL_row10name"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:text="---"
+       android:tag="10"
+       android:gravity="center" />
+
+   <TextView
+       android:id="@+id/listFragment_LBL_row10moves"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:text="---"
+       android:tag="10"
+       android:gravity="center" />
+   <TextView
+       android:id="@+id/listFragment_LBL_row10time"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:text="---"
+       android:tag="10"
+       android:gravity="center" />
+  </TableRow>
+
+ </TableLayout>
+
+</RelativeLayout>

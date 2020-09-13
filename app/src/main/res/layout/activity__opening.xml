@@ -5,10 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity_Opening">
+    tools:context=".Activities.Activity_Opening">
 
 
         <ImageView
+            android:id="@+id/open_IMG_background"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/back"
