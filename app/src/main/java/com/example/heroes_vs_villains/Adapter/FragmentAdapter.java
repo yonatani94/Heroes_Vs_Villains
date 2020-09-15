@@ -1,7 +1,6 @@
 package com.example.heroes_vs_villains.Adapter;
 
 import android.content.Context;
-import android.graphics.Color;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,19 +18,21 @@ public class FragmentAdapter extends FragmentPagerAdapter {
         super(fm, behavior);
         this.context = context;
     }
+
     public FragmentAdapter(@NonNull FragmentManager fm, Context context) {
         super(fm);
         this.context = context;
     }
+
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        if(position==0)
+        if (position == 0)
             return Fragment_Map.getINSTANCE();
-        else if(position==1)
+        else if (position == 1)
             return Fragment_List.getINSTANCE();
         else
-        return null;
+            return null;
     }
 
     @Override
@@ -42,13 +43,12 @@ public class FragmentAdapter extends FragmentPagerAdapter {
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        switch (position)
-        {
-            case 0 :
+        switch (position) {
+            case 0:
                 return "Fragment_Map";
             case 1:
                 return "Fragment_List";
         }
-            return "";
+        return "";
     }
 }

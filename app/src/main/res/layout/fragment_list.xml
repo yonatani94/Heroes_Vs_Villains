@@ -7,7 +7,9 @@
  <TableLayout
      android:id="@+id/listFragment_LAY_table"
      android:layout_width="match_parent"
-     android:layout_height="match_parent">
+     android:layout_height="match_parent"
+     android:layout_marginTop="40dp"
+     >
 
   <TableRow
       android:layout_height="0dp"

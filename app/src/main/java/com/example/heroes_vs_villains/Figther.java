@@ -5,16 +5,16 @@ import android.widget.ProgressBar;
 import java.util.ArrayList;
 
 public class Figther {
-    private String name= "";
-    private double lati=0;
-    private double longi=0;
-    private int numOfMoves=0;
+    private String name = "";
+    private double lati = 0;
+    private double longi = 0;
+    private int numOfMoves = 0;
     private int playerTurn = 0;
     private boolean winner = false;
     private ProgressBar life;
 
 
-    public ArrayList<Top10> scores ;
+    public ArrayList<Top10> scores;
 
     public Figther(String name, double lati, double longi, int numOfMoves, int playerTurn, boolean winner, ProgressBar life) {
         this.name = name;
@@ -26,8 +26,7 @@ public class Figther {
         this.life = life;
     }
 
-    public Figther()
-    {
+    public Figther() {
 
     }
 
@@ -62,7 +61,7 @@ public class Figther {
         return scores;
     }
 
-    public Figther setScores(ArrayList <Top10> scores) {
+    public Figther setScores(ArrayList<Top10> scores) {
         this.scores = scores;
         return this;
     }

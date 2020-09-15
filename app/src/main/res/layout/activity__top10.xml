@@ -6,35 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".Activities.Activity_Top10">
 
-    <LinearLayout
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/top10_TLB_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ></com.google.android.material.tabs.TabLayout>
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/top10_VPG_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:baselineAligned="false">
+        ></androidx.viewpager.widget.ViewPager>
 
-        <FrameLayout
-            android:id="@+id/board_LAY_list"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <TextView
-                android:id="@+id/list_LBL_top1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-
-                ></TextView>
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/board_LAY_map"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-        </FrameLayout>
-    </LinearLayout>
 
 
 </RelativeLayout>

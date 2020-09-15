@@ -36,46 +36,19 @@ public class Activity_End extends AppCompatActivity {
 
     private void showWinner() {
 
-        if(getIntent().getExtras()!=null)
-        {
+        if (getIntent().getExtras() != null) {
             String name = getIntent().getStringExtra("winner");
             Log.d("johny", "showWinner: winner is + " + name);
-            int countSteps = getIntent().getIntExtra("count",0);
+            int countSteps = getIntent().getIntExtra("count", 0);
             Log.d("johny", "showWinner: count is + " + countSteps);
 
-            int time = getIntent().getIntExtra("time",0);
+            int time = getIntent().getIntExtra("time", 0);
             Log.d("johny", "showWinner: time is + " + time);
 
-            end_TXT_winner.setText("The Winner is " +  name+" \nTime Fight =  " +
-                    time +  " and Number of moves is " + countSteps );
+            end_TXT_winner.setText("The Winner is " + name + " \nTime Fight =  " +
+                    time + " and Number of moves is " + countSteps);
         }
 
-     /*   ArrayList<Top10> arrayList  = getListFromSp();
-        Gson gson = new Gson();
-           String json =  MYSP.getInstance().getString("TOP10","");
-            Top10 top10 = gson.fromJson(json,Top10.class);
-
-     int size = arrayList.size();
-        if(arrayList!=null)
-        {
-
-                end_TXT_winner.setText("The Winner is " +  arrayList.get(size-1).getName()+" ,Time Fight =  " +
-                        arrayList.get(size-1).getTime()+  " ,Number of moves is " +
-                        arrayList.get(size-1).getNumOfMoves() + " ,lati = "+arrayList.get(size-1).getLat() +
-                        " ,longi = "+ arrayList.get(size-1).getLon());
-
-        }
-
-*/
-
-     }
-
-    public ArrayList<Top10> getListFromSp() {
-        Gson gson = new Gson();
-        String json = MYSP.getInstance().getString("TOP10", "");
-        Type type =  new TypeToken<ArrayList<Top10>>() {}.getType();
-        ArrayList<Top10> arrayList = gson.fromJson(json, type);
-        return  arrayList;
     }
 
 
@@ -88,7 +61,7 @@ public class Activity_End extends AppCompatActivity {
     }
 
     private void findViews() {
-        end_IMG_pic=findViewById(R.id.end_IMG_pic);
-        end_TXT_winner=findViewById(R.id.end_TXT_winner);
+        end_IMG_pic = findViewById(R.id.end_IMG_pic);
+        end_TXT_winner = findViewById(R.id.end_TXT_winner);
     }
 }

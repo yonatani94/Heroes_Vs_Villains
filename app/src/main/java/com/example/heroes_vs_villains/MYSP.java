@@ -18,7 +18,6 @@ public class MYSP {
     }
 
 
-
     private static MYSP instance;
     private SharedPreferences prefs;
 
@@ -32,12 +31,6 @@ public class MYSP {
 
     private MYSP(Context context, String sharePreferencesName) {
         prefs = context.getApplicationContext().getSharedPreferences(sharePreferencesName, Context.MODE_PRIVATE);
-    }
-
-    public static MYSP initHelper(Context context) {
-        if (instance == null)
-            instance = new MYSP(context);
-        return instance;
     }
 
     public static MYSP initHelper(Context context, String sharePreferencesName) {
@@ -54,108 +47,14 @@ public class MYSP {
         prefs.edit().putString(KEY, value).apply();
     }
 
-    public void putObject(String KEY, Object value) {
-        prefs.edit().putString(KEY, new Gson().toJson(value)).apply();
-    }
 
     public void putInt(String KEY, int value) {
         prefs.edit().putInt(KEY, value).apply();
     }
 
-    public void putLong(String KEY, long value) {
-        prefs.edit().putLong(KEY, value).apply();
-    }
-
-    public void putFloat(String KEY, float value) {
-        prefs.edit().putFloat(KEY, value).apply();
-    }
-
-    public void putDouble(String KEY, double defValue) {
-
-        putString(KEY, String.valueOf(defValue));
-    }
-
-    public boolean getBoolean(String KEY, boolean defvalue) {
-        return prefs.getBoolean(KEY, defvalue);
-    }
 
     public String getString(String KEY, String defvalue) {
         return prefs.getString(KEY, defvalue);
-    }
-
-    public <T> T getObject(String KEY, Class<T> mModelClass) {
-        Object object = null;
-        try {
-            object = new Gson().fromJson(prefs.getString(KEY, ""), mModelClass);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-        return Primitives.wrap(mModelClass).cast(object);
-    }
-
-    public int getInt(String KEY, int defValue) {
-        return prefs.getInt(KEY, defValue);
-    }
-
-    public long getLong(String KEY, long defValue) {
-        return prefs.getLong(KEY, defValue);
-    }
-
-    public float getFloat(String KEY, float defValue) {
-        return prefs.getFloat(KEY, defValue);
-    }
-
-    public double getDouble(String KEY, double defValue) {
-        return Double.parseDouble(getString(KEY, String.valueOf(defValue)));
-    }
-
-    public void removeKey(String KEY) {
-        prefs.edit().remove(KEY).apply();
-    }
-
-    public boolean contain(String KEY) {
-        return prefs.contains(KEY);
-    }
-
-    public void registerChangeListener(SharedPreferences.OnSharedPreferenceChangeListener listener) {
-        prefs.registerOnSharedPreferenceChangeListener(listener);
-    }
-
-    public void unregisterChangeListener(SharedPreferences.OnSharedPreferenceChangeListener listener) {
-        prefs.unregisterOnSharedPreferenceChangeListener(listener);
-    }
-
-    public <T> void putArray(String KEY, ArrayList<T> array) {
-        String json = new Gson().toJson(array);
-        prefs.edit().putString(KEY, json).apply();
-    }
-
-    public <T> ArrayList<T> getArray(String KEY, TypeToken typeToken) {
-        // type token == new TypeToken<ArrayList<YOUR_CLASS>>() {}
-        ArrayList<T> arr = null;
-        try {
-            arr = new Gson().fromJson(prefs.getString(KEY, ""), typeToken.getType());
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-        return arr;
-    }
-
-    public <S, T> void putMap(String KEY, HashMap<S, T> map) {
-        String json = new Gson().toJson(map);
-        prefs.edit().putString(KEY, json).apply();
-    }
-
-    public <S, T> HashMap<S, T> getMap(String KEY, TypeToken typeToken) {
-        // getMap(MySharedPreferencesV4.KEYS.SP_PLAYLISTS, new TypeToken<HashMap<String, Playlist>>() {});
-        // type token == new TypeToken<ArrayList<YOUR_CLASS>>() {}
-        HashMap<S, T> map = null;
-        try {
-            map = new Gson().fromJson(prefs.getString(KEY, ""), typeToken.getType());
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-        return map;
     }
 
 

@@ -6,6 +6,11 @@ public class Top10 {
     private double lon = 0.0;
     private long time = 0;
     private int numOfMoves = 99;
+    final int maxPlayres = 10;
+
+    public interface KEYS {
+        int MAX_PLAYERS = 10;
+    }
 
     public Top10() {
     }
@@ -14,7 +19,7 @@ public class Top10 {
         return name;
     }
 
-    public Top10(String name , double lat, double lon, long time, int numOfMoves) {
+    public Top10(String name, double lat, double lon, long time, int numOfMoves) {
         this.name = name;
         this.lat = lat;
         this.lon = lon;

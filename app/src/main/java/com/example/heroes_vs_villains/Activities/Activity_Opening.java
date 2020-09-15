@@ -44,20 +44,18 @@ public class Activity_Opening extends AppCompatActivity {
     }
 
 
-
-
     private void goTopTen() {
-    open_BTN_top10.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            openTop10();
-        }
-    });
+        open_BTN_top10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openTop10();
+            }
+        });
     }
 
     private void openTop10() {
-        Intent myIntent = new Intent(Activity_Opening.this,Activity_Top10.class);
-        Activity_Opening.this.startActivity(myIntent);
+        Intent myIntent = new Intent(Activity_Opening.this, Activity_Top10.class);
+        startActivity(myIntent);
     }
 
     private void addPIcWithGlide() {
@@ -69,24 +67,24 @@ public class Activity_Opening extends AppCompatActivity {
     }
 
     private void startGame() {
-    open_BTN_start.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            openNewActivity();
-        }
-    });
+        open_BTN_start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openNewActivity();
+            }
+        });
     }
 
     private void openNewActivity() {
-        Intent myIntent = new Intent(Activity_Opening.this,MainActivity.class);
-        Activity_Opening.this.startActivity(myIntent);
+        Intent myIntent = new Intent(Activity_Opening.this, MainActivity.class);
+        startActivity(myIntent);
         finish();
     }
 
     private void findViews() {
-        open_BTN_start=findViewById(R.id.open_BTN_start);
-        open_BTN_top10=findViewById(R.id.open_BTN_top10);
-        open_IMG_background=findViewById(R.id.open_IMG_background);
+        open_BTN_start = findViewById(R.id.open_BTN_start);
+        open_BTN_top10 = findViewById(R.id.open_BTN_top10);
+        open_IMG_background = findViewById(R.id.open_IMG_background);
 
     }
 }
