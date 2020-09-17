@@ -338,7 +338,14 @@ public class MainActivity extends AppCompatActivity {
         }
         figther.scores.add(new Top10(name, lati, longi, count, move));
         setList("TOP10", figther.scores);
+    }
 
+    private Figther getFigtherFromSP(String key)
+    {
+        Gson gson = new Gson();
+        String json = MYSP.getInstance().getString(key, "");
+        figther = gson.fromJson(json, Figther.class);
+        return figther;
     }
 
     private ArrayList<Top10> getArray(String key) {
